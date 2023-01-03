@@ -62,7 +62,7 @@ function logout() {
 
 function getTransactions() {
     const transactions = data.transactions;
-    const transactionsHtml = '';
+    let transactionsHtml = '';
 
     if(transactions.length){
         transactions.forEach((item) => {
@@ -72,14 +72,14 @@ function getTransactions() {
                 type = "Saída";
             }
 
-            transactionsHtml += '
+            transactionsHtml += `
             <tr>
                 <th scope="row">${item.date}</th>
                 <td>${item.value.toFixed(2)}</td>
                 <td>${type}</td>
                 <td>${item.description}</td>
             </tr>
-            '
+            `
         })
     }
 
@@ -90,6 +90,14 @@ function saveData(data) {
     localStorage.setItem(data.login, JSON.stringify(data));
 }
 
-    // getCashIn();
+// function logout() {
+//     sessionStorage.removeItem("logged");
+//     localStorage.removeItem("session");
+
+//     window.location.href = "index.html";
+// }
+
+// document.getElementById("button-logout").addEventListener("click", logout);
+// getCashIn();
     // getCashOut();
     // getTotal();

@@ -82,12 +82,12 @@ function getCashIn() {
         }
     
         for (let index = 0; index < limit; index++) {
-            cashInHtml += '
-            <div class="row mb-4"> 
+            cashInHtml += `
+            <div class="row mb-4">
                 <div class="col-12"> 
                     <h3 class="fs-2">R$ ${cashIn[index].value.toFixed(2)}</h3>
                     <div class="container p-0">
-                        <div class="row">
+                        '<div class="row">'
                             <div class="col-12 col-md-8">
                                 <p>${cashIn[index].description}</p>
                             </div>
@@ -98,7 +98,7 @@ function getCashIn() {
                     </div>
                 </div>
             </div>
-            '   
+             `  
         }
         
         document.getElementById("cash-in-list").innerHTML = cashInHtml;
@@ -121,8 +121,8 @@ function getCashOut() {
         }
     
         for (let index = 0; index < limit; index++) {
-            cashInHtml += '
-            <div class="row mb-4"> 
+            cashInHtml += `
+            <div class="row mb-4">
                 <div class="col-12"> 
                     <h3 class="fs-2">R$ ${cashIn[index].value.toFixed(2)}</h3>
                     <div class="container p-0">
@@ -137,7 +137,7 @@ function getCashOut() {
                     </div>
                 </div>
             </div>
-            '   
+            `   
         }
         
         document.getElementById("cash-out-list").innerHTML = cashInHtml;
@@ -156,7 +156,7 @@ function getTotal() {
         }
     });
 
-    document.getElementById("total").innerHTML = 'R$ ${total.toFixed(2)}';
+    document.getElementById("total").innerHTML = `R$ ${total.toFixed(2)}`;
 }
 
 function saveData(data) {
